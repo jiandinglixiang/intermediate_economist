@@ -1,0 +1,10 @@
+{
+  "name": "univerify",
+  "dependencies": {
+    "form-data": "^4.0.0"
+  },
+  "extensions": {
+    "uni-cloud-verify": {},
+    "uni-cloud-jql": {}
+  }
+}

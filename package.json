@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "@dcloudio/types": "^3.3.2",
+    "@dcloudio/uni-app": "^2.0.2-3071120230427001",
+    "@dcloudio/uni-app-plus": "^2.0.2-3071120230427001",
+    "@dcloudio/uni-automator": "^2.0.2-3071120230427001",
+    "@dcloudio/uni-h5": "^2.0.2-3071120230427001",
+    "@dcloudio/uni-ui": "^1.4.27",
+    "core-js": "^3.8.3",
+    "mini-types": "*",
+    "miniprogram-api-typings": "*",
+    "pinia": "^2.0.36",
+    "prettier": "^2.8.8",
+    "vue": "^3.3.2",
+    "vue-property-decorator": "^8.0.0"
+  },
+  "name": "certified-accountant",
+  "private": true,
+  "uni-app": {
+    "scripts": {}
+  },
+  "version": "0.1.0",
+  "dependencies": {
+    "dayjs": "^1.11.7"
+  }
+}
