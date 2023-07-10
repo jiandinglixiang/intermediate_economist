@@ -1,13 +1,13 @@
 {
   "id": "uni-number-box",
   "displayName": "uni-number-box 数字输入框",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "NumberBox 带加减按钮的数字输入框组件，用户可以控制每次点击增加的数值，支持小数。",
   "keywords": [
     "uni-ui",
     "uniui",
     "数字输入框"
-  ],
+],
   "repository": "https://github.com/dcloudio/uni-ui",
   "engines": {
     "HBuilderX": ""
@@ -15,7 +15,7 @@
   "directories": {
     "example": "../../temps/example_temps"
   },
-  "dcloudext": {
+"dcloudext": {
     "sale": {
       "regular": {
         "price": "0.00"
@@ -36,9 +36,7 @@
     "type": "component-vue"
   },
   "uni_modules": {
-    "dependencies": [
-      "uni-scss"
-    ],
+    "dependencies": ["uni-scss"],
     "encrypt": [],
     "platforms": {
       "cloud": {
@@ -75,8 +73,8 @@
           "联盟": "u"
         },
         "Vue": {
-          "vue2": "y",
-          "vue3": "y"
+            "vue2": "y",
+            "vue3": "y"
         }
       }
     }

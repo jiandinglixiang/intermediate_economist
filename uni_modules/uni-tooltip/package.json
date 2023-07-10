@@ -9,13 +9,14 @@
     "tooltip",
     "tip",
     "文字提示"
-  ],
+],
   "repository": "",
-  "engines": {},
+"engines": {
+  },
   "dcloudext": {
     "category": [
-      "前端组件",
-      "通用组件"
+        "前端组件",
+        "通用组件"
     ],
     "sale": {
       "regular": {

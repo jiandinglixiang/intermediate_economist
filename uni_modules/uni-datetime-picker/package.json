@@ -1,7 +1,7 @@
 {
   "id": "uni-datetime-picker",
   "displayName": "uni-datetime-picker 日期选择器",
-  "version": "2.2.23",
+  "version": "2.2.24",
   "description": "uni-datetime-picker 日期时间选择器，支持日历，支持范围选择",
   "keywords": [
     "uni-datetime-picker",
@@ -9,7 +9,7 @@
     "uniui",
     "日期时间选择器",
     "日期时间"
-  ],
+],
   "repository": "https://github.com/dcloudio/uni-ui",
   "engines": {
     "HBuilderX": ""
@@ -17,7 +17,7 @@
   "directories": {
     "example": "../../temps/example_temps"
   },
-  "dcloudext": {
+"dcloudext": {
     "sale": {
       "regular": {
         "price": "0.00"
@@ -39,9 +39,9 @@
   },
   "uni_modules": {
     "dependencies": [
-      "uni-scss",
-      "uni-icons"
-    ],
+			"uni-scss",
+			"uni-icons"
+		],
     "encrypt": [],
     "platforms": {
       "cloud": {
@@ -78,8 +78,8 @@
           "联盟": "u"
         },
         "Vue": {
-          "vue2": "y",
-          "vue3": "y"
+            "vue2": "y",
+            "vue3": "y"
         }
       }
     }
