@@ -65,7 +65,7 @@ const props = defineProps({
   color: #ffffff;
   border: none;
   border-radius: 200rpx;
-  background: linear-gradient(135deg, rgba(97, 139, 255, 1) 0%, rgba(48, 93, 217, 1) 100%);
+  background: #5200f5;
 }
 
 .close {

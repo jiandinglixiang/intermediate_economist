@@ -1,26 +1,32 @@
 <script setup>
 import PopupIndex from "@/components/popup/PopupIndex.vue"
-import { HOME_AD_POPUP } from "@/components/popup/popupKeyMap"
+import { HOME_AD_POPUP, LOGIN_TIPS_POPUP } from "@/components/popup/popupKeyMap"
 import CountdownBar from "@/pages/home/components/CountdownBar.vue"
 import NavBar from "@/pages/home/components/NavBar.vue"
-import { AppAuditStatus } from "@/pinia/audit"
 import { NoticeStatus } from "@/pinia/notice"
-import { AD_POP_UP_IMPRESSION_HISTORY, USER_TOKEN_DATA } from "@/utils/consts"
+import { AD_POP_UP_IMPRESSION_HISTORY, HOME_LIST_USE_MARKS, USER_TOKEN_DATA } from "@/utils/consts"
 import { openURL } from "@/utils/func"
 import { onLoad, onPullDownRefresh, onReachBottom } from "@dcloudio/uni-app"
 import dayjs from "dayjs"
-import { nextTick, ref } from "vue"
+import { computed, nextTick, ref } from "vue"
 import CarouselTxt from "@/pages/home/components/CarouselTxt.vue"
 import { usePageList } from "@/hooks/usePageList"
 import { httpRequest } from "@/utils/http"
-import { POST_MATERIAL_LIST } from "@/api"
+import {
+  POST_LIST_NOTICE,
+  POST_MATERIAL_LIST,
+  POST_MATERIAL_LIST_CHANGE,
+  POST_MATERIAL_LIST_DETAILS
+} from "@/api"
 import LoadTips from "@/components/tips/load-tips.vue"
 import { pushBehavior } from "@/utils/behavior"
+import { PopupStatus } from "@/pinia/popup"
 
 const noLogin = !uni.getStorageSync(USER_TOKEN_DATA)?.token
+const useMarkList = ref(uni.getStorageSync(HOME_LIST_USE_MARKS) || [])
 
+const storePopup = PopupStatus()
 const storeNotice = NoticeStatus()
-const storeAppAuditStatus = AppAuditStatus()
 const showAdPopup = ref(false)
 const refAdPopup = ref()
 
@@ -45,9 +51,19 @@ function handleClick(action) {
 }
 
 const { list, getList, loading, loadMore, refresh } = usePageList({ requestFunc })
+const noticeData = ref([])
+const noticeList = computed(() => {
+  const pdf = list.value
+  return noticeData.value.map(({ nickname }, index) => {
+    return `用户 ${nickname} 下载了 ${pdf[index]?.name || ""}`
+  })
+})
 
 onLoad(() => {
   getList()
+  httpRequest(POST_LIST_NOTICE, "POST").then((res) => {
+    noticeData.value = res.data
+  })
 })
 onPullDownRefresh(async () => {
   await refresh()
@@ -62,21 +78,53 @@ onReachBottom(() => {
 function requestFunc({ page, rows }) {
   return httpRequest(POST_MATERIAL_LIST, "POST", { page, rows, typeid: 1, status: 0 })
 }
-function handleStudy(item) {
-  const link = `https://stark.pxo.cn/pdfjs-3.0.279-dist/web/viewer.html?file=${encodeURI(
-    item.uploadResource
-  )}`
-  uni.navigateTo({
-    url: `/pages/webview/index?noDecodeLinkQuery=1&title=${encodeURIComponent(
-      item.name
-    )}&link=${encodeURIComponent(link)}`,
-    success() {
-      pushBehavior({
-        action: "资料列表 点击 资料&下载&打开\t311\t用户查看领取 {资料名称}\n",
-        onceDay: true,
-        replaceValue: item.name,
-        isCallback: false
-      })
+async function handleStudy(item) {
+  if (noLogin) {
+    gotoLogin()
+    return
+  }
+  try {
+    await uni.showLoading({ title: "" })
+    await httpRequest(POST_MATERIAL_LIST_CHANGE, "POST", { id: item.id })
+    // 先兑换
+    const res = await httpRequest(POST_MATERIAL_LIST_DETAILS, "POST", { id: item.id })
+    // 获取详情
+    const link = `https://stark.pxo.cn/pdfjs-3.0.279-dist/web/viewer.html?file=${encodeURI(
+      res.data.list[0].url
+    )}`
+    uni.navigateTo({
+      url: `/pages/webview/index?noDecodeLinkQuery=1&title=${encodeURIComponent(
+        item.name
+      )}&link=${encodeURIComponent(link)}`,
+      success() {
+        pushBehavior({
+          action: "资料列表 点击 资料&下载&打开\t311\t用户查看领取 {资料名称}\n",
+          onceDay: true,
+          replaceValue: item.name,
+          isCallback: false
+        })
+      }
+    })
+    if (!useMarkList.value.includes(item.id)) {
+      useMarkList.value.push(item.id)
+      uni.setStorageSync(HOME_LIST_USE_MARKS, useMarkList.value)
+    }
+  } catch (e) {
+    console.log(e)
+  } finally {
+    uni.hideLoading()
+  }
+}
+
+function gotoLogin() {
+  storePopup[LOGIN_TIPS_POPUP]?.open({
+    title: "提示",
+    tips: "直播预约功能需要您登录后，我们才可通知您开课信息",
+    buttonText: "去登录",
+    handleClick(action) {
+      if (action === "btn") {
+        uni.navigateTo({ url: "/pages/login/index" })
+      }
     }
   })
 }
@@ -89,22 +137,29 @@ function handleStudy(item) {
     <view class="item" v-for="item in list" :key="item.id">
       <view class="left">
         <text class="title">{{ item.name }}</text>
-        <text class="sub-text1">共计88条</text>
-        <text class="sub-text2">278位同学在学</text>
+        <!--        <text class="sub-text1">共计88条</text>-->
+        <!--        <text class="sub-text2">278位同学在学</text>-->
       </view>
       <view class="right">
-        <view v-if="item.id % 2" class="btn-start" @click="handleStudy(item)">开始学习</view>
-        <view v-else class="btn-continue">继续学习</view>
+        <view v-if="useMarkList.includes(item.id)" class="btn-continue" @click="handleStudy(item)">
+          继续学习
+        </view>
+        <view v-else class="btn-start" @click="handleStudy(item)">开始学习</view>
       </view>
     </view>
   </view>
   <load-tips :loading="loading" />
-  <carousel-txt :txt-list="list" />
+  <carousel-txt :txt-list="noticeList" />
   <popup-index
     v-if="showAdPopup"
     ref="refAdPopup"
     :popup-key="HOME_AD_POPUP"
     @action="handleClick"
+  />
+  <popup-index
+    v-if="noLogin"
+    :ref="(r) => PopupStatus().setPopupRef(LOGIN_TIPS_POPUP, r)"
+    :popup-key="LOGIN_TIPS_POPUP"
   />
 </template>
 

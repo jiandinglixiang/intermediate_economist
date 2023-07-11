@@ -110,7 +110,7 @@ function onLinkTap(res) {
     <view class="information-title">{{ detail.title }}</view>
     <view class="desc">
       <text class="dec-info">来源：互联网</text>
-      <text class="dec-info">小编：CPA</text>
+      <text class="dec-info">小编：经济师</text>
       <text class="dec-info">{{ pubdate(detail.pubdate) }}</text>
     </view>
     <view class="rich-text-box">

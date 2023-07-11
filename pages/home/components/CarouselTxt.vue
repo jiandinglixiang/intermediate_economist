@@ -16,7 +16,7 @@ const props = defineProps({
       v-for="(delay, index) in [-1, 0, 1, 2, -2]"
       :style="`animation-delay:${3 * delay}s;`"
     >
-      用户***下载了{{ txtList[index]?.name }}
+      {{ txtList[index] || txtList[0] }}
     </view>
   </view>
 </template>

@@ -11,7 +11,7 @@ const buryThePoint = pushBehavior({
   isCallback: true
 })
 const buryThePoint2 = pushBehavior({
-  action: "点击  在线咨询 按钮\t710\t用户在线咨询CPA考试信息\n",
+  action: "点击  在线咨询 按钮\t710\t用户在线咨询经济师考试信息\n",
   replaceValue: "",
   onceDay: false,
   isCallback: true

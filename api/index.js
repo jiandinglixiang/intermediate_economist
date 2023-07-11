@@ -20,11 +20,9 @@ export const POST_CLIENT_USER_LOGOUT = `/client/user/logout`
 
 export const POST_CLIENT_USER_FEEDBACK = `/client/user/feedback`
 
-
 export const GET_AD_CLIENT_BANNER = "/client/banner"
 
 export const GET_LIVE_LIST = "/client/live/list"
-
 
 export const POST_LIVE_SUBSCRIBE = "/client/live/subscribe"
 
@@ -35,29 +33,24 @@ export const POST_VIDEO_LIST = "/client/video/list" // 课程
 
 export const GET_VCOURSE_LIST = "/client/vcourse/list" // 系统课
 
-
 export const POST_LIST_OF_MATERIALS = "/client/material/original/list"
 
 export const POST_LIST_NOTICE = "/client/material/original/listDraw"
 
+export const POST_VCOURSE_DETATILS = "/client/vcourse/detatils"
 
-export const  POST_VCOURSE_DETATILS = "/client/vcourse/detatils"
-
-export const  POST_LIVE_DETATILS = "/client/live/detatils"
-
+export const POST_LIVE_DETATILS = "/client/live/detatils"
 
 export const POST_VIDEO_LIST_CLASSHOUR = "/client/video/listClasshour"
 
-
 export const POST_ARTICLE_TYPE = "/client/article/type"
 export const GET_ARTICLE_LIST = "/dedeCmsApp/index/v1/getarclist"
-export const GET_ARTICLE_DETAIL = '/dedeCmsApp/index/v1/getarclist/{id}'
+export const GET_ARTICLE_DETAIL = "/dedeCmsApp/index/v1/getarclist/{id}"
 
 export const POST_VIDEO_COLLECT = "/client/video/collect"
 export const POST_ARTICLE_COLLECT = "/client/article/collect"
 
-export const POST_ARTICLE_COLLECT_STATUS  = "/client/article/collect/status"
-
+export const POST_ARTICLE_COLLECT_STATUS = "/client/article/collect/status"
 
 export const POST_VIDEO_COLLECT_LIST = "/client/video/collect/list"
 
@@ -67,6 +60,10 @@ export const POST_VIDEO_PLAY_LOG = "/client/video/playLog"
 
 export const ONE_KEY_LOGIN_UNI_APP = "/client/onekeyloginuniapp"
 
-export const  POST_BEHAVIOR="/client/behavior/push"
+export const POST_BEHAVIOR = "/client/behavior/push"
 
 export const POST_MATERIAL_LIST = "/client/material/list"
+
+export const POST_MATERIAL_LIST_DETAILS = "/client/material/details"
+
+export const POST_MATERIAL_LIST_CHANGE = "/client/material/change"
