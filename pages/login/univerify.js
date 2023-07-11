@@ -26,8 +26,8 @@ export default async function openUniverify(successDeal, otherLogin) {
           path: "static/login/close.png" // 自定义关闭按钮，仅支持本地图片。 HBuilderX3.3.7+版本支持
         },
         authButton: {
-          normalColor: "#305DD9", // 授权按钮正常状态背景颜色 默认值：#3479f5
-          highlightColor: "#305DD9", // 授权按钮按下状态背景颜色 默认值：#2861c5（仅ios支持）
+          normalColor: "#5200F5", // 授权按钮正常状态背景颜色 默认值：#3479f5
+          highlightColor: "#5200F5", // 授权按钮按下状态背景颜色 默认值：#2861c5（仅ios支持）
           textColor: "#ffffff" // 授权按钮文字颜色 默认值：#ffffff
         },
         otherLoginButton: {
@@ -44,7 +44,7 @@ export default async function openUniverify(successDeal, otherLogin) {
           checkedImage: "static/login/icon_Choose1.png", // 可选 条款勾选框选中状态图片（仅支持本地图片 建议尺寸24x24px）(3.2.0+ 版本支持)
           checkBoxSize: 20, // 可选 条款勾选框大小，仅android支持
           textColor: "#999999", // 文字颜色 默认值：#BBBBBB
-          termsColor: "#305DDA", //  协议文字颜色 默认值： #5496E3
+          termsColor: "#5200F5", //  协议文字颜色 默认值： #5496E3
           prefix: "我已阅读并同意", // 条款前的文案 默认值：“我已阅读并同意”
           suffix: "并使用本机号码登录", // 条款后的文案 默认值：“并使用本机号码登录”
           privacyItems: [

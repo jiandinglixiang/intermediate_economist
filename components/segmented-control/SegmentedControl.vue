@@ -92,7 +92,7 @@ function onChange(index) {
       height: 8rpx;
       content: "";
       border-radius: 4rpx;
-      background: #305dda;
+      background: #5200F5;
     }
   }
 }

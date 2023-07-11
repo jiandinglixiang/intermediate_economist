@@ -6,19 +6,19 @@ const emits = defineEmits(["action"])
     <text class="title">解锁学习资源礼包</text>
     <view class="tips">
       <text>真题模拟系统</text>
-      <uni-icons color="#10C278" size="25" type="checkmarkempty"></uni-icons>
+      <image class="yes-icon" src="/static/home/yes.png"></image>
     </view>
     <view class="tips">
       <text>通关资料</text>
-      <uni-icons color="#10C278" size="25" type="checkmarkempty"></uni-icons>
+      <image class="yes-icon" src="/static/home/yes.png"></image>
     </view>
     <view class="tips">
       <text>教辅教材图书</text>
-      <uni-icons color="#10C278" size="25" type="checkmarkempty"></uni-icons>
+      <image class="yes-icon" src="/static/home/yes.png"></image>
     </view>
     <view class="tips">
       <text>考试报名</text>
-      <uni-icons color="#10C278" size="25" type="checkmarkempty"></uni-icons>
+      <image class="yes-icon" src="/static/home/yes.png"></image>
     </view>
     <button class="agree" @click="emits('action', 'btn')">立即查看</button>
     <image class="close" src="/static/close@2x.png" @click="emits('action', 'close')"></image>
@@ -57,6 +57,11 @@ const emits = defineEmits(["action"])
   margin-bottom: 24rpx;
   letter-spacing: 0rpx;
   color: rgba(51, 51, 51, 1);
+  .yes-icon {
+    width: 48rpx;
+    height: 36rpx;
+    margin-left: 8rpx;
+  }
 }
 
 .agree {
@@ -69,7 +74,7 @@ const emits = defineEmits(["action"])
   color: #ffffff;
   border: none;
   border-radius: 200rpx;
-  background: linear-gradient(135deg, rgba(97, 139, 255, 1) 0%, rgba(48, 93, 217, 1) 100%);
+  background: linear-gradient(135deg, #945eff 0%, #5200f5 100%);
 }
 
 .close {

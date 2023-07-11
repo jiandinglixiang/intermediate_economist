@@ -276,7 +276,7 @@ function validate(phone) {
   }
 
   .highlight {
-    color: #305dda;
+    color: #5200F5;
   }
 }
 
@@ -319,7 +319,7 @@ function validate(phone) {
     font-size: 28rpx;
     font-weight: 500;
     flex: 0 0 auto;
-    color: #305dda;
+    color: #5200F5;
   }
 }
 
@@ -333,7 +333,7 @@ function validate(phone) {
   text-align: center;
   color: #ffffff;
   border-radius: 44rpx;
-  background: linear-gradient(135deg, #618bff 0%, #305dd9 100%);
+  background: #5200F5;
 }
 
 .btn-tourist {

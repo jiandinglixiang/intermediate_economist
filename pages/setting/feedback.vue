@@ -117,7 +117,7 @@ async function handleSubmit() {
     color: rgba(255, 255, 255, 1);
     border: none;
     border-radius: 44rpx;
-    background: linear-gradient(135deg, #618bff 0%, #305dd9 100%);
+    background: #5200F5;
   }
 }
 </style>

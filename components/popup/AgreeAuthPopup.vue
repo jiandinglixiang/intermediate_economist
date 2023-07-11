@@ -3,11 +3,11 @@
     <view class="tips">
       <text>
         我已阅读并同意
-        <text @click="openURL({ value: USER_AGREEMENT_URL })" style="color: #007aff">
+        <text @click="openURL({ value: USER_AGREEMENT_URL })" style="color: #5200F5">
           《用户服务协议》
         </text>
         与
-        <text @click="openURL({ value: PRIVACY_URL })" style="color: #007aff">
+        <text @click="openURL({ value: PRIVACY_URL })" style="color: #5200F5">
           《隐私保护政策》
         </text>
       </text>
@@ -66,7 +66,7 @@ const emits = defineEmits(["action"])
     font-weight: 700;
     color: #ffffff;
     border: none;
-    background: linear-gradient(135deg, #618bff 0%, #305dd9 100%);
+    background: #5200F5;
   }
 }
 </style>

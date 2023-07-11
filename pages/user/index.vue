@@ -56,7 +56,7 @@ function buryThePoint(des) {
           <text>{{ storeUserInfo.phone }}</text>
           <!--<view class="leve">Lv7</view>-->
         </view>
-        <text class="user-work-title">注册会计师备考</text>
+        <text class="user-work-title">中级经济师备考</text>
       </view>
       <view v-else class="login-text" @click="navigateTo('/pages/login/index', true)">
         登录/注册
@@ -78,10 +78,10 @@ function buryThePoint(des) {
         <image src="/static/user/arrows@2x.png"></image>
       </view>
       <view class="bottom-box">
-        <view class="region-item" @click="navigateTo('/pages/setting/favorites')">
-          <image src="/static/user/collection-item@2x.png"></image>
-          <text>收藏夹</text>
-        </view>
+        <!--        <view class="region-item" @click="navigateTo('/pages/setting/favorites')">-->
+        <!--          <image src="/static/user/collection-item@2x.png"></image>-->
+        <!--          <text>收藏夹</text>-->
+        <!--        </view>-->
         <!--        <view class="region-item disable">-->
         <!--          <image src="/static/user/error-question@2x.png"></image>-->
         <!--          <text>错题集</text>-->

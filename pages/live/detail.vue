@@ -155,7 +155,7 @@ const status = computed(() => {
 function openLivePopup() {
   storePopup[LOGIN_TIPS_POPUP]?.open({
     title: "预约成功",
-    tips: `已预约 <text style="color:#305DDA">${detail.value.title}</text> 直播，将于<text style="color:#305DDA">${date.value}</text>开始直播，请记得打开App观看，并添加老师领取讲义哦～`,
+    tips: `已预约 <text style="color:#5200F5">${detail.value.title}</text> 直播，将于<text style="color:#5200F5">${date.value}</text>开始直播，请记得打开App观看，并添加老师领取讲义哦～`,
     buttonText: "领取直播讲义",
     handleClick(action) {
       if (action === "btn") {
@@ -199,7 +199,7 @@ function gotoLogin() {
           :show-colon="false"
           background-color="#ffffff"
           class="countdown-time"
-          color="#305DDA"
+          color="#5200F5"
           splitor-color="#ffffff"
         />
         <view

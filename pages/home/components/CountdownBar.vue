@@ -83,14 +83,14 @@ onUnmounted(() => {
   justify-content: flex-start;
   box-sizing: border-box;
   height: 112rpx;
-  margin: 0 32rpx 42rpx;
+  margin: 0 32rpx;
   padding: 24rpx;
   border-radius: 16rpx;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.06);
 
   .highlight {
-    color: rgba(48, 93, 218, 1);
+    color: #5200f5;
   }
 
   .left-g {
@@ -139,10 +139,10 @@ onUnmounted(() => {
     line-height: 64rpx;
     width: 160rpx;
     height: 64rpx;
-    color: rgba(48, 93, 218, 1);
-    border: 1rpx solid rgba(48, 93, 218, 1);
+    color: #5200f5;
+    //border: 1rpx solid rgba(48, 93, 218, 1);
     border-radius: 200rpx;
-    background: rgba(48, 93, 218, 0.08);
+    background: rgba(82, 0, 245, 0.08);
   }
 }
 </style>

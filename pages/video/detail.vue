@@ -28,7 +28,7 @@ onLoad(async () => {
   uni.setNavigationBarTitle({ title: options.title })
   setTimeout(() => {
     stopRightButtonListener = setTitleNViewButtonStyle(
-      options.collect ? { text: "\ue68f", color: "#305DDA" } : { text: "\ue688", color: "#333" },
+      options.collect ? { text: "\ue68f", color: "#5200F5" } : { text: "\ue688", color: "#333" },
       rightButton
     )
     uni.pageScrollTo(0)
@@ -125,7 +125,7 @@ async function rightButton() {
   options.collect = options.collect ? 0 : 1
   uni.setStorageSync(PAGES_VIDEO_DETAIL, options)
   setTitleNViewButtonStyle(
-    options.collect ? { text: "\ue68f", color: "#305DDA" } : { text: "\ue688", color: "#333333" }
+    options.collect ? { text: "\ue68f", color: "#5200F5" } : { text: "\ue688", color: "#333333" }
   )
   uni.$emit("/pages/video/detail", "collect", options)
   uni.showToast({ title: options.collect ? "收藏成功" : "取消收藏", icon: "none" })

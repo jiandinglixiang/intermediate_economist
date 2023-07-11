@@ -59,11 +59,11 @@ function next(value) {
       <text selectable>
         感谢您使用我们的APP!!
         我们非常重视您的个人信息和隐私保护。为了更好地保护您的个人权益，在您使用我们的产品前，请务必审慎阅读
-        <text @click="openURL({ value: USER_AGREEMENT_URL })" style="color: #007aff">
+        <text @click="openURL({ value: USER_AGREEMENT_URL })" style="color: #5200F5">
           《用户服务协议》
         </text>
         、
-        <text @click="openURL({ value: PRIVACY_URL })" style="color: #007aff">
+        <text @click="openURL({ value: PRIVACY_URL })" style="color: #5200F5">
           《隐私保护政策》
         </text>
         的所有条款。您点击“同意”的行为即表示您已经阅读完毕并同意以上协议及隐私政策的全部内容。如您同意以上协议及隐私保护政策的内容，请点击“同意”开始我们的产品服务。
@@ -165,7 +165,7 @@ page {
   color: rgba(255, 255, 255, 1);
   border: none;
   border-radius: 44rpx;
-  background: linear-gradient(135deg, #618bff 0%, #305dd9 100%);
+  background: #5200F5;
 }
 .btn-content {
   height: 300rpx;
