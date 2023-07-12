@@ -49,7 +49,7 @@ function interval() {
 }
 
 const buryThePoint = pushBehavior({
-  action: "首页-报考查询按钮&直播列表页-报考规划\t710\t用户查看经济师报考规划\n",
+  action: "首页-报考查询按钮&直播列表页-报考规划\t710\t用户查看报考规划\n",
   onceDay: false,
   replaceValue: "",
   isCallback: true

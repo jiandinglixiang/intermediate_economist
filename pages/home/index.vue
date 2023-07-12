@@ -14,6 +14,7 @@ import { usePageList } from "@/hooks/usePageList"
 import { httpRequest } from "@/utils/http"
 import {
   POST_LIST_NOTICE,
+  POST_LIST_OF_MATERIALS,
   POST_MATERIAL_LIST,
   POST_MATERIAL_LIST_CHANGE,
   POST_MATERIAL_LIST_DETAILS
@@ -21,12 +22,14 @@ import {
 import LoadTips from "@/components/tips/load-tips.vue"
 import { pushBehavior } from "@/utils/behavior"
 import { PopupStatus } from "@/pinia/popup"
+import { AppAuditStatus } from "@/pinia/audit"
 
 const noLogin = !uni.getStorageSync(USER_TOKEN_DATA)?.token
 const useMarkList = ref(uni.getStorageSync(HOME_LIST_USE_MARKS) || [])
 
 const storePopup = PopupStatus()
 const storeNotice = NoticeStatus()
+const storeAppAuditStatus = AppAuditStatus()
 const showAdPopup = ref(false)
 const refAdPopup = ref()
 
@@ -76,9 +79,36 @@ onReachBottom(() => {
 })
 
 function requestFunc({ page, rows }) {
+  if (storeAppAuditStatus.auditStatusBoolean) {
+    return httpRequest(POST_LIST_OF_MATERIALS, "POST", { page, rows })
+  }
   return httpRequest(POST_MATERIAL_LIST, "POST", { page, rows, typeid: 1, status: 0 })
 }
 async function handleStudy(item) {
+  if (storeAppAuditStatus.auditStatusBoolean) {
+    const link = `https://stark.pxo.cn/pdfjs-3.0.279-dist/web/viewer.html?file=${encodeURI(
+      item.uploadResource
+    )}`
+    uni.navigateTo({
+      url: `/pages/webview/index?noDecodeLinkQuery=1&title=${encodeURIComponent(
+        item.name
+      )}&link=${encodeURIComponent(link)}`,
+      success() {
+        pushBehavior({
+          action: "资料列表 点击 资料&下载&打开\t311\t用户查看领取 {资料名称}\n",
+          onceDay: true,
+          replaceValue: item.name,
+          isCallback: false
+        })
+      }
+    })
+    if (!useMarkList.value.includes(item.id)) {
+      useMarkList.value.push(item.id)
+      uni.setStorageSync(HOME_LIST_USE_MARKS, useMarkList.value)
+    }
+    return
+  }
+
   if (noLogin) {
     gotoLogin()
     return
@@ -119,7 +149,7 @@ async function handleStudy(item) {
 function gotoLogin() {
   storePopup[LOGIN_TIPS_POPUP]?.open({
     title: "提示",
-    tips: "直播预约功能需要您登录后，我们才可通知您开课信息",
+    tips: "此功能需要您登录后，才能访问",
     buttonText: "去登录",
     handleClick(action) {
       if (action === "btn") {
@@ -137,8 +167,8 @@ function gotoLogin() {
     <view class="item" v-for="item in list" :key="item.id">
       <view class="left">
         <text class="title">{{ item.name }}</text>
-        <!--        <text class="sub-text1">共计88条</text>-->
-        <!--        <text class="sub-text2">278位同学在学</text>-->
+        <!--                <text class="sub-text1">共计88条</text>-->
+        <!--                <text class="sub-text2">278位同学在学</text>-->
       </view>
       <view class="right">
         <view v-if="useMarkList.includes(item.id)" class="btn-continue" @click="handleStudy(item)">

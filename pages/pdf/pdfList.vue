@@ -18,7 +18,7 @@ const noticeList = computed(() => {
   const pdf = list.value
   return noticeData.value.map(({ nickname }, index) => {
     return {
-      title: `用户 ${nickname} 下载了 ${pdf[index]?.name || "经济师《考试必背概念》"}`
+      title: `用户 ${nickname} 下载了 ${pdf[index]?.name || "《考试必背概念》"}`
     }
   })
 })
@@ -61,7 +61,7 @@ function navigateBack() {
 }
 
 const buryThePoint = pushBehavior({
-  action: "资料大礼包&一键领取\t311\t用户索取经济师复习相应资料\n",
+  action: "资料大礼包&一键领取\t311\t用户索取复习相应资料\n",
   onceDay: true,
   replaceValue: "",
   isCallback: true

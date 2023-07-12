@@ -64,7 +64,7 @@ function buryThePoint(des) {
       <view
         class="user-teacher"
         @click="
-          openURL(storeNotice.miniApp.find((i) => i.id === 8)), buryThePoint('用户添加经济师助教老师')
+          openURL(storeNotice.miniApp.find((i) => i.id === 8)), buryThePoint('用户添加助教老师')
         "
       >
         <image class="teacher-bg" src="/static/user/user-teacher.png"></image>
@@ -100,7 +100,7 @@ function buryThePoint(des) {
         </view>
         <view
           class="region-item"
-          @click="navigateTo('/pages/pdf/pdfList', true), buryThePoint('用户领取经济师考试资料')"
+          @click="navigateTo('/pages/pdf/pdfList', true), buryThePoint('用户领取考试资料')"
         >
           <image src="/static/user/data-get@2x.png"></image>
           <text>资料领取</text>
@@ -108,7 +108,7 @@ function buryThePoint(des) {
         <view
           class="region-item"
           @click="
-            openURL(storeNotice.miniApp.find((i) => i.id === 8)), buryThePoint('用户添加经济师备考群')
+            openURL(storeNotice.miniApp.find((i) => i.id === 8)), buryThePoint('用户添加备考群')
           "
         >
           <image src="/static/user/exam-preparation-group@2x.png"></image>
@@ -124,7 +124,7 @@ function buryThePoint(des) {
     <view
       class="list-item"
       @click="
-        openURL(storeNotice.miniApp.find((i) => i.id === 8)), buryThePoint('用户领取经济师备考规划')
+        openURL(storeNotice.miniApp.find((i) => i.id === 8)), buryThePoint('用户领取备考规划')
       "
     >
       <image class="left-icon" src="/static/user/goal-planning@2x.png"></image>
@@ -133,7 +133,7 @@ function buryThePoint(des) {
     </view>
     <view
       class="list-item"
-      @click="openURL(storeNotice.onlineConsultation[0]), buryThePoint('用户咨询经济师考试信息')"
+      @click="openURL(storeNotice.onlineConsultation[0]), buryThePoint('用户咨询考试信息')"
     >
       <image class="left-icon" src="/static/user/consultation-line@2x.png"></image>
       <text class="name">在线咨询</text>
