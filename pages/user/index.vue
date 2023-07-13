@@ -56,7 +56,7 @@ function buryThePoint(des) {
           <text>{{ storeUserInfo.phone }}</text>
           <!--<view class="leve">Lv7</view>-->
         </view>
-        <text class="user-work-title">中级经济师备考</text>
+        <text class="user-work-title">中级经济师考点速记备考</text>
       </view>
       <view v-else class="login-text" @click="navigateTo('/pages/login/index', true)">
         登录/注册

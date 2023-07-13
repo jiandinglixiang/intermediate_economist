@@ -6,7 +6,7 @@ import LoadTips from "@/components/tips/load-tips.vue"
 import { usePageList } from "@/hooks/usePageList"
 import { pushBehavior } from "@/utils/behavior"
 import { NoticeStatus } from "@/pinia/notice"
-import { formatNumber, openURL } from "@/utils/func"
+import { formatNumber, getPDFOrigin, openURL } from "@/utils/func"
 import { httpRequest } from "@/utils/http"
 import { onLoad, onPullDownRefresh, onReachBottom } from "@dcloudio/uni-app"
 import { computed, ref } from "vue"
@@ -68,7 +68,7 @@ const buryThePoint = pushBehavior({
 })
 
 function handleDownload(item) {
-  const link = `https://stark.pxo.cn/pdfjs-3.0.279-dist/web/viewer.html?file=${encodeURI(
+  const link = `${getPDFOrigin(item.uploadResource)}?file=${encodeURI(
     item.uploadResource
   )}`
   uni.navigateTo({

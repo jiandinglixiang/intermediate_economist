@@ -2,7 +2,7 @@
   <view class="container">
     <view class="guide-page">
       <image class="guide-image" src="/static/logo.png"></image>
-      <text class="guide-text">中级经济师考试题库</text>
+<!--      <text class="guide-text">中级经济师考点速记</text>-->
     </view>
     <popup-index
       v-if="!ConfirmAuthorization"

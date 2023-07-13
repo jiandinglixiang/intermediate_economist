@@ -1,318 +1,343 @@
 {
-  "pages": [
-    // pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-    {
-      "path": "pages/guide/index",
-      "style": {
-        "navigationBarTitleText": "引导页",
-        "navigationStyle": "custom",
-        "disableScroll": true,
-        "disableSwipeBack": true,
-        "app-plus": {
-          "animationType": "fade-in",
-          "bounce": "none",
-          "popGesture": "none"
-        }
-      }
-    },
-    {
-      "path": "pages/home/index",
-      "style": {
-        "navigationStyle": "custom",
-        "navigationBarTitleText": "中级经济师",
-        "enablePullDownRefresh": true,
-        "app-plus": {
-          "bounce": "none",
-          "pullToRefresh": {
-            "support": true,
-            "style": "circle",
-            "offset": "15%"
-          }
-        }
-      }
-    },
-//    {
-//      "path": "pages/question-bank/index",
-//      "style": {
-//        "navigationBarTitleText": "题库"
-//      }
-//    },
-    {
-      "path": "pages/user/index",
-      "style": {
-        "navigationStyle": "custom",
-        "navigationBarTitleText": "我的",
-        "pageOrientation": "landscape",
-        "app-plus": {
-          "bounce": "none"
-        }
-      }
-    },
-    {
-      "path": "pages/popup/index",
-      "style": {
-        "navigationBarTitleText": "弹窗页",
-        "navigationStyle": "custom",
-        "disableScroll": true,
-        "disableSwipeBack": true,
-        "backgroundColor": "transparent",
-        "app-plus": {
-          "animationType": "fade-in",
-          "background": "transparent",
-          "bounce": "none",
-          "popGesture": "none"
-        }
-      }
-    },
-    {
-      "path": "pages/login/index",
-      "style": {
-        "disableSwipeBack": true,
-        "navigationBarTitleText": "登录",
-        "navigationStyle": "custom",
-        "pageOrientation": "landscape",
-        "app-plus": {
-          "animationType": "fade-in",
-          "popGesture": "none",
-          "bounce": "none",
-          "safearea": {
-            "bottom": {
-              "offset": "auto"
-            }
-          }
-        }
-      }
-    }
-  ],
-  "subPackages": [
-//    {
-//      "root": "pages/live/",
-//      "pages": [{
-//          "path": "liveList",
-//          "style": {
-//            "navigationBarTitleText": "直播列表",
-//            "enablePullDownRefresh": true,
-//            "app-plus": {
-//              "bounce": "none",
-//              "pullToRefresh": {
-//                "support": true,
-//                "style": "circle",
-//                "offset": "15%"
-//              }
-//            }
-//          }
-//        },
-//        {
-//          "path": "detail",
-//          "style": {
-//            "navigationBarTitleText": "直播课详情"
-//          }
-//        }
-//      ]
-//    },
-//    {
-//      "root": "pages/course/",
-//      "pages": [{
-//          "path": "courseList",
-//          "style": {
-//            "navigationBarTitleText": "系统课",
-//            "navigationStyle": "custom",
-//            "enablePullDownRefresh": true,
-//            "app-plus": {
-//              "bounce": "none",
-//              "pullToRefresh": {
-//                "support": true,
-//                "style": "circle",
-//                "offset": "15%"
-//              }
-//            }
-//          }
-//        },
-//        {
-//          "path": "detail",
-//          "style": {
-//            "navigationBarTitleText": "课程详情",
-//            "app-plus": {
-//              "titleNView": {
-//                "buttons": [{
-//                  "color": "",
-//                  "text": "",
-//                  "fontSrc": "/static/uni-icons/uniicons.ttf"
-//                }]
-//              }
-//            }
-//          }
-//        }
-//      ]
-//    },
-//    {
-//      "root": "pages/video/",
-//      "pages": [{
-//          "path": "videoList",
-//          "style": {
-//            "navigationBarTitleText": "精选课程",
-//            "navigationStyle": "custom",
-//            "app-plus": {
-//              "bounce": "none"
-//            }
-//          }
-//        },
-//        {
-//          "path": "detail",
-//          "style": {
-//            "navigationBarTitleText": "课程详情",
-//            "app-plus": {
-//              "bounce": "none",
-//              "titleNView": {
-//                "buttons": [{
-//                  "color": "",
-//                  "text": "",
-//                  "fontSrc": "/static/uni-icons/uniicons.ttf"
-//                }]
-//              }
-//            }
-//          }
-//        }
-//      ]
-//    },
-    {
-      "root": "pages/setting/",
-      "pages": [{
-          "path": "index",
-          "style": {
-            "navigationBarTitleText": "设置",
-            "backgroundColor": "#F9F9F9"
-          }
-        },
-        {
-          "path": "favorites",
-          "style": {
-            "navigationBarTitleText": "收藏夹",
-            "enablePullDownRefresh": true,
-            "app-plus": {
-              "bounce": "none",
-              "pullToRefresh": {
-                "support": true,
-                "style": "circle",
-                "offset": "15%"
-              }
-            }
-          }
-        },
-        {
-          "path": "userInfo",
-          "style": {
-            "navigationBarTitleText": "个人资料",
-            "backgroundColor": "#F9F9F9"
-          }
-        },
-        {
-          "path": "feedback",
-          "style": {
-            "navigationBarTitleText": "意见反馈"
-          }
-        },
-        {
-          "path": "cancelAccount",
-          "style": {
-            "navigationBarTitleText": "注销账号"
-          }
-        }
-      ]
-    },
-//    {
-//      "root": "pages/information/",
-//      "pages": [{
-//          "path": "informationList",
-//          "style": {
-//            "navigationStyle": "custom",
-//            "navigationBarTitleText": "资讯列表",
-//            "enablePullDownRefresh": true,
-//            "app-plus": {
-//              "bounce": "none",
-//              "pullToRefresh": {
-//                "support": true,
-//                "style": "circle",
-//                "offset": "15%"
-//              }
-//            }
-//          }
-//        },
-//        {
-//          "path": "detail",
-//          "style": {
-//            "navigationBarTitleText": "资讯详情",
-//            "app-plus": {
-//              "bounce": "none"
-//            }
-//          }
-//        }
-//      ]
-//    },
-    {
-      "root": "pages/pdf/",
-      "pages": [{
-        "path": "pdfList",
-        "style": {
-          "navigationStyle": "custom",
-          "navigationBarTitleText": "资料列表",
-          "enablePullDownRefresh": true,
-          "app-plus": {
-            "bounce": "none",
-            "pullToRefresh": {
-              "support": true,
-              "style": "circle",
-              "offset": "15%"
-            }
-          }
-        }
-      }]
-    },
-    {
-      "root": "pages/webview/",
-      "pages": [{
-        "path": "index",
-        "style": {
-          "navigationBarTitleText": "",
-          "app-plus": {
-            "bounce": "none"
-          }
-        }
-      }]
-    }
-  ],
-  "globalStyle": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "中级经济师",
-    "navigationBarBackgroundColor": "#FFFFFF",
-    "backgroundColor": "#FFFFFF"
-  },
-  "uniIdRouter": {},
-  "tabBar": {
-    "borderStyle": "#EEEEEE",
-    "backgroundColor": "#FFFFFF",
-    "color": "#999999",
-    "selectedColor": "#5200F5",
-    "fontSize": "12px",
-    "height": "50px",
-    "list": [{
-        "pagePath": "pages/home/index",
-        "iconPath": "static/tabbar/icon_index.png",
-        "selectedIconPath": "static/tabbar/index_selected.png",
-        "text": "首页"
-      },
-//      {
-//        "pagePath": "pages/question-bank/index",
-//        "iconPath": "static/tabbar/question_bank.png",
-//        "selectedIconPath": "static/tabbar/question_bank_selected.png",
-//        "text": "题库"
-//      },
-      {
-        "pagePath": "pages/user/index",
-        "iconPath": "static/tabbar/icon_user.png",
-        "selectedIconPath": "static/tabbar/user_selected.png",
-        "text": "我的"
-      }
-    ]
-  }
+	"pages": [
+		// pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/guide/index",
+			"style": {
+				"navigationBarTitleText": "引导页",
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"disableSwipeBack": true,
+				"app-plus": {
+					"animationType": "fade-in",
+					"bounce": "none",
+					"popGesture": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "中级经济师考点速记",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"bounce": "none",
+					"pullToRefresh": {
+						"support": true,
+						"style": "circle",
+						"offset": "15%"
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/test/1",
+			"style": {
+				"navigationBarTitleText": "题库"
+			}
+		}, {
+			"path": "pages/test/2",
+			"style": {
+				"navigationBarTitleText": "题2"
+			}
+		}, {
+			"path": "pages/test/3",
+			"style": {
+				"navigationBarTitleText": "题3"
+			}
+		}, {
+			"path": "pages/test/4",
+			"style": {
+				"navigationBarTitleText": "题4"
+			}
+		}, {
+			"path": "pages/test/5",
+			"style": {
+				"navigationBarTitleText": "题5"
+			}
+		}, {
+			"path": "pages/test/6",
+			"style": {
+				"navigationBarTitleText": "题6"
+			}
+		},
+		{
+			"path": "pages/user/index",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "我的",
+				"pageOrientation": "landscape",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/popup/index",
+			"style": {
+				"navigationBarTitleText": "弹窗页",
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"disableSwipeBack": true,
+				"backgroundColor": "transparent",
+				"app-plus": {
+					"animationType": "fade-in",
+					"background": "transparent",
+					"bounce": "none",
+					"popGesture": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/login/index",
+			"style": {
+				"disableSwipeBack": true,
+				"navigationBarTitleText": "登录",
+				"navigationStyle": "custom",
+				"pageOrientation": "landscape",
+				"app-plus": {
+					"animationType": "fade-in",
+					"popGesture": "none",
+					"bounce": "none",
+					"safearea": {
+						"bottom": {
+							"offset": "auto"
+						}
+					}
+				}
+			}
+		}
+	],
+	"subPackages": [
+		//    {
+		//      "root": "pages/live/",
+		//      "pages": [{
+		//          "path": "liveList",
+		//          "style": {
+		//            "navigationBarTitleText": "直播列表",
+		//            "enablePullDownRefresh": true,
+		//            "app-plus": {
+		//              "bounce": "none",
+		//              "pullToRefresh": {
+		//                "support": true,
+		//                "style": "circle",
+		//                "offset": "15%"
+		//              }
+		//            }
+		//          }
+		//        },
+		//        {
+		//          "path": "detail",
+		//          "style": {
+		//            "navigationBarTitleText": "直播课详情"
+		//          }
+		//        }
+		//      ]
+		//    },
+		//    {
+		//      "root": "pages/course/",
+		//      "pages": [{
+		//          "path": "courseList",
+		//          "style": {
+		//            "navigationBarTitleText": "系统课",
+		//            "navigationStyle": "custom",
+		//            "enablePullDownRefresh": true,
+		//            "app-plus": {
+		//              "bounce": "none",
+		//              "pullToRefresh": {
+		//                "support": true,
+		//                "style": "circle",
+		//                "offset": "15%"
+		//              }
+		//            }
+		//          }
+		//        },
+		//        {
+		//          "path": "detail",
+		//          "style": {
+		//            "navigationBarTitleText": "课程详情",
+		//            "app-plus": {
+		//              "titleNView": {
+		//                "buttons": [{
+		//                  "color": "",
+		//                  "text": "",
+		//                  "fontSrc": "/static/uni-icons/uniicons.ttf"
+		//                }]
+		//              }
+		//            }
+		//          }
+		//        }
+		//      ]
+		//    },
+		//    {
+		//      "root": "pages/video/",
+		//      "pages": [{
+		//          "path": "videoList",
+		//          "style": {
+		//            "navigationBarTitleText": "精选课程",
+		//            "navigationStyle": "custom",
+		//            "app-plus": {
+		//              "bounce": "none"
+		//            }
+		//          }
+		//        },
+		//        {
+		//          "path": "detail",
+		//          "style": {
+		//            "navigationBarTitleText": "课程详情",
+		//            "app-plus": {
+		//              "bounce": "none",
+		//              "titleNView": {
+		//                "buttons": [{
+		//                  "color": "",
+		//                  "text": "",
+		//                  "fontSrc": "/static/uni-icons/uniicons.ttf"
+		//                }]
+		//              }
+		//            }
+		//          }
+		//        }
+		//      ]
+		//    },
+		{
+			"root": "pages/setting/",
+			"pages": [{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "设置",
+						"backgroundColor": "#F9F9F9"
+					}
+				},
+				{
+					"path": "favorites",
+					"style": {
+						"navigationBarTitleText": "收藏夹",
+						"enablePullDownRefresh": true,
+						"app-plus": {
+							"bounce": "none",
+							"pullToRefresh": {
+								"support": true,
+								"style": "circle",
+								"offset": "15%"
+							}
+						}
+					}
+				},
+				{
+					"path": "userInfo",
+					"style": {
+						"navigationBarTitleText": "个人资料",
+						"backgroundColor": "#F9F9F9"
+					}
+				},
+				{
+					"path": "feedback",
+					"style": {
+						"navigationBarTitleText": "意见反馈"
+					}
+				},
+				{
+					"path": "cancelAccount",
+					"style": {
+						"navigationBarTitleText": "注销账号"
+					}
+				}
+			]
+		},
+		//    {
+		//      "root": "pages/information/",
+		//      "pages": [{
+		//          "path": "informationList",
+		//          "style": {
+		//            "navigationStyle": "custom",
+		//            "navigationBarTitleText": "资讯列表",
+		//            "enablePullDownRefresh": true,
+		//            "app-plus": {
+		//              "bounce": "none",
+		//              "pullToRefresh": {
+		//                "support": true,
+		//                "style": "circle",
+		//                "offset": "15%"
+		//              }
+		//            }
+		//          }
+		//        },
+		//        {
+		//          "path": "detail",
+		//          "style": {
+		//            "navigationBarTitleText": "资讯详情",
+		//            "app-plus": {
+		//              "bounce": "none"
+		//            }
+		//          }
+		//        }
+		//      ]
+		//    },
+		{
+			"root": "pages/pdf/",
+			"pages": [{
+				"path": "pdfList",
+				"style": {
+					"navigationStyle": "custom",
+					"navigationBarTitleText": "资料列表",
+					"enablePullDownRefresh": true,
+					"app-plus": {
+						"bounce": "none",
+						"pullToRefresh": {
+							"support": true,
+							"style": "circle",
+							"offset": "15%"
+						}
+					}
+				}
+			}]
+		},
+		{
+			"root": "pages/webview/",
+			"pages": [{
+				"path": "index",
+				"style": {
+					"navigationBarTitleText": "",
+					"app-plus": {
+						"bounce": "none"
+					}
+				}
+			}]
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "中级经济师考点速记",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"borderStyle": "#EEEEEE",
+		"backgroundColor": "#FFFFFF",
+		"color": "#999999",
+		"selectedColor": "#5200F5",
+		"fontSize": "12px",
+		"height": "50px",
+		"list": [{
+				"pagePath": "pages/home/index",
+				"iconPath": "static/tabbar/icon_index.png",
+				"selectedIconPath": "static/tabbar/index_selected.png",
+				"text": "首页"
+			},
+			//      {
+			//        "pagePath": "pages/question-bank/index",
+			//        "iconPath": "static/tabbar/question_bank.png",
+			//        "selectedIconPath": "static/tabbar/question_bank_selected.png",
+			//        "text": "题库"
+			//      },
+			{
+				"pagePath": "pages/user/index",
+				"iconPath": "static/tabbar/icon_user.png",
+				"selectedIconPath": "static/tabbar/user_selected.png",
+				"text": "我的"
+			}
+		]
+	}
 }

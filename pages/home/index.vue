@@ -5,7 +5,7 @@ import CountdownBar from "@/pages/home/components/CountdownBar.vue"
 import NavBar from "@/pages/home/components/NavBar.vue"
 import { NoticeStatus } from "@/pinia/notice"
 import { AD_POP_UP_IMPRESSION_HISTORY, HOME_LIST_USE_MARKS, USER_TOKEN_DATA } from "@/utils/consts"
-import { openURL } from "@/utils/func"
+import { getPDFOrigin, openURL } from "@/utils/func"
 import { onLoad, onPullDownRefresh, onReachBottom } from "@dcloudio/uni-app"
 import dayjs from "dayjs"
 import { computed, nextTick, ref } from "vue"
@@ -84,9 +84,10 @@ function requestFunc({ page, rows }) {
   }
   return httpRequest(POST_MATERIAL_LIST, "POST", { page, rows, typeid: 1, status: 0 })
 }
+
 async function handleStudy(item) {
   if (storeAppAuditStatus.auditStatusBoolean) {
-    const link = `https://stark.pxo.cn/pdfjs-3.0.279-dist/web/viewer.html?file=${encodeURI(
+    const link = `${getPDFOrigin(item.uploadResource)}?file=${encodeURI(
       item.uploadResource
     )}`
     uni.navigateTo({
@@ -119,7 +120,7 @@ async function handleStudy(item) {
     // 先兑换
     const res = await httpRequest(POST_MATERIAL_LIST_DETAILS, "POST", { id: item.id })
     // 获取详情
-    const link = `https://stark.pxo.cn/pdfjs-3.0.279-dist/web/viewer.html?file=${encodeURI(
+    const link = `${getPDFOrigin(res.data.list[0].url)}?file=${encodeURI(
       res.data.list[0].url
     )}`
     uni.navigateTo({

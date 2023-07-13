@@ -130,3 +130,16 @@ export function openURL({ value: href }) {
   window.open(href)
   // #endif
 }
+
+export function getPDFOrigin(url) {
+  // const arr = [
+  //   "https://o-attachment.gaodun.com",
+  //   "https://stark-attachment.pxo.cn",
+  //   "http://stark-attachment.pxo.cn",
+  //   "https://simg01.gaodunwangxiao.com"
+  // ]
+  // if (arr.some((i) => url.includes(i))) {
+  return "https://stark.pxo.cn/pdfjs-1.10.100-dist/web/viewer.html"
+  // }
+  // return "https://stark.pxo.cn/pdfjs-3.0.279-dist/web/viewer.html"
+}
