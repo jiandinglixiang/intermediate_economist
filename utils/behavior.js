@@ -3,6 +3,7 @@ import { BEHAVIOR_RECORDS } from "@/utils/consts"
 import { findFormEndIndex } from "@/utils/func"
 import { httpRequest } from "@/utils/http"
 import dayjs from "dayjs"
+import { BundleId } from "@/config"
 
 const onceDayCache = (() => {
   const cache =
@@ -52,7 +53,7 @@ export function pushBehavior({
     httpRequest(POST_BEHAVIOR, "POST", {
       behavior_id: contents[1],
       content: contents[2],
-      bundle_id: "com.newgd.jjs"
+      bundle_id: BundleId
     })
       .then(() => {
         onceDay && spliceOnceDayCache(onceDayCache.length, 0, { key: cacheKey, expire: Date.now() })
