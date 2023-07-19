@@ -51,7 +51,8 @@ export function pushBehavior({
     }
     httpRequest(POST_BEHAVIOR, "POST", {
       behavior_id: contents[1],
-      content: contents[2]
+      content: contents[2],
+      bundle_id: "com.newgd.jjs"
     })
       .then(() => {
         onceDay && spliceOnceDayCache(onceDayCache.length, 0, { key: cacheKey, expire: Date.now() })
