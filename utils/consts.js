@@ -5,8 +5,8 @@ export const AD_POP_UP_IMPRESSION_HISTORY = "AD_POP_UP_IMPRESSION_HISTORY"
 export const CONFIRM_AUTHORIZATION = "CONFIRM_AUTHORIZATION"
 export const HOME_LIST_USE_MARKS = "HOME_LIST_USE_MARKS"
 
-export const PRIVACY_URL = `https://stark.pxo.cn/api/Privacy.Protocol/view?id=89`
-export const USER_AGREEMENT_URL = `https://stark.pxo.cn/api/Privacy.Protocol/view?id=88`
+export const PRIVACY_URL = `https://stark.pxo.cn/api/Privacy.Protocol/view?id=92`
+export const USER_AGREEMENT_URL = `https://stark.pxo.cn/api/Privacy.Protocol/view?id=93`
 export const PAGES_VIDEO_DETAIL = "/pages/video/detail"
 
 export const PAGES_POPUP_INDEX = "/pages/popup/index"

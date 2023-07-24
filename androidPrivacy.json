@@ -7,7 +7,7 @@
         "buttonRefuse" : "暂不同意",
         "second" : {
             "title" : "温馨提示",
-            "message" : "　　进入应用前，你需先同意<a href=\"https://stark.pxo.cn/api/Privacy.Protocol/view?id=88\">《用户协议》</a>和<a href=\"https://stark.pxo.cn/api/Privacy.Protocol/view?id=89\">《隐私协议》</a>，否则将退出应用。",
+            "message" : "　　进入应用前，你需先同意<a href=\"https://stark.pxo.cn/api/Privacy.Protocol/view?id=93\">《用户协议》</a>和<a href=\"https://stark.pxo.cn/api/Privacy.Protocol/view?id=92\">《隐私协议》</a>，否则将退出应用。",
             "buttonAccept" : "同意并继续",
             "buttonRefuse" : "退出应用"
         }
