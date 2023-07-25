@@ -1,9 +1,10 @@
 import { deepMergeObjects } from "@/utils/func"
 import { USER_TOKEN_DATA } from "@/utils/consts"
 import { APP_ID } from "@/config"
+import { userInfo } from "@/pinia/user"
 
 const typeOfMethod = ["GET", "POST"]
-export const ErrorCodes = ["100000"]
+export const ErrorCodes = ["100000", "200000"]
 
 export const config = {
   baseUrl: "https://apigateway.pxo.cn/ztApp",
@@ -42,6 +43,9 @@ export function httpRequest(path = "", method = "GET", data = {}, newConfigs = {
       return res
     })
     .catch((err) => {
+      if (err.code === "200000") {
+        userInfo().loginOutClean()
+      }
       if (err.errMsg !== "request:fail") {
         return Promise.reject(err)
       }

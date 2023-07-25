@@ -87,9 +87,7 @@ function requestFunc({ page, rows }) {
 
 async function handleStudy(item) {
   if (storeAppAuditStatus.auditStatusBoolean) {
-    const link = `${getPDFOrigin(item.uploadResource)}?file=${encodeURI(
-      item.uploadResource
-    )}`
+    const link = `${getPDFOrigin(item.uploadResource)}?file=${encodeURI(item.uploadResource)}`
     uni.navigateTo({
       url: `/pages/webview/index?noDecodeLinkQuery=1&title=${encodeURIComponent(
         item.name
@@ -120,9 +118,7 @@ async function handleStudy(item) {
     // 先兑换
     const res = await httpRequest(POST_MATERIAL_LIST_DETAILS, "POST", { id: item.id })
     // 获取详情
-    const link = `${getPDFOrigin(res.data.list[0].url)}?file=${encodeURI(
-      res.data.list[0].url
-    )}`
+    const link = `${getPDFOrigin(res.data.list[0].url)}?file=${encodeURI(res.data.list[0].url)}`
     uni.navigateTo({
       url: `/pages/webview/index?noDecodeLinkQuery=1&title=${encodeURIComponent(
         item.name

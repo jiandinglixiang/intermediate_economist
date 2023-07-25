@@ -2,6 +2,7 @@
 import { pushBehavior } from "@/utils/behavior"
 import { NoticeStatus } from "@/pinia/notice"
 import { openURL } from "@/utils/func"
+import FixedFab from "@/components/fab/FixedFab.vue"
 
 const storeNotice = NoticeStatus()
 const buryThePoint = pushBehavior({
@@ -34,6 +35,10 @@ const buryThePoint2 = pushBehavior({
     ></image>
   </view>
   <view class="nav-bar" />
+  <fixed-fab
+    type="home"
+    @handleClick="openURL(storeNotice.onlineConsultation[0]), buryThePoint2()"
+  />
 </template>
 
 <style lang="scss" scoped>

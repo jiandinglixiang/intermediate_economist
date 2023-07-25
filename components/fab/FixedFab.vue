@@ -7,7 +7,7 @@ const emits = defineEmits(["handleClick"])
 
 <template>
   <movable-area class="movable-area">
-    <movable-view class="movable-view" direction="vertical" y="350" @click="emits('handleClick')">
+    <movable-view class="movable-view" direction="vertical" y="200" @click="emits('handleClick')">
       <image
         v-if="props.type === 'teaching'"
         class="fixed-fab"
@@ -17,6 +17,11 @@ const emits = defineEmits(["handleClick"])
         v-else-if="props.type === 'information'"
         class="fixed-fab"
         src="/static/information/information-spree.png"
+      />
+      <image
+        v-else-if="props.type === 'home'"
+        class="fixed-fab"
+        src="/static/information/home.png"
       />
       <image v-else class="fixed-fab2" src="/static/information/add-group.png" />
     </movable-view>

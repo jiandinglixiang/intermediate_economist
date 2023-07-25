@@ -2,7 +2,7 @@
   <view class="container">
     <view class="guide-page">
       <image class="guide-image" src="/static/logo.png"></image>
-<!--      <text class="guide-text">中级经济师考点速记</text>-->
+      <!--      <text class="guide-text">中级经济师考点速记</text>-->
     </view>
     <popup-index
       v-if="!ConfirmAuthorization"
@@ -74,6 +74,7 @@ async function handleAction(action) {
       const threadClass = plus.ios.importClass("NSThread")
       const mainThread = plus.ios.invoke(threadClass, "mainThread")
       plus.ios.invoke(mainThread, "exit")
+      plus.ios?.import?.("UIApplication")?.sharedApplication?.()?.performSelector?.("exit")
     }
     // #endif
     // #ifdef H5
